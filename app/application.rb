@@ -2,7 +2,7 @@ require 'pry'
 class Application
   def call(env)
     resp = Rack::Response.new
-
+binding.pry
     current_time = Time.new
 
     case
@@ -13,6 +13,6 @@ class Application
     end
     resp.finish
   end
-  binding.pry
+
 
 end
