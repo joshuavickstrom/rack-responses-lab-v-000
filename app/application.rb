@@ -7,7 +7,7 @@ class Application
     case
     when current_time.hour < 12
       resp.write "Good Morning"
-    when current_time.hour > 12 && current_time.hour < 24
+    when current_time.hour == 14
       resp.write "Good Afternoon"
     end
     resp.finish
