@@ -5,9 +5,7 @@ class Application
 
     current_time = Time.new
 
-binding.pry
     if current_time.hour < 12
-
       resp.write "Good Morning"
     elsif current_time.hour > 12
       resp.write "Good Afternoon"
