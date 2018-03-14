@@ -1,13 +1,19 @@
 class Application
   def call(env)
     resp = Rack::Response.new
-
-    current_time = Time.new
-
-    if current_time.hour > 12
-      resp.write "Good Morning"
-    else
-      resp.write "Good Afternoon"
+    
+    now = Time.now
+    today = Date.today.to_time
+    
+    morning = today.beginning_of_day
+    noon = today.noon
+    evening = today.change( hour: 17 )
+    
+    
+    if (morning..noon).cover? now
+      resp.write 'Good Morning'
+    else (noon..evening).cover? now
+      resp.write 'Good Afternoon'
     end
     resp.finish
   end
