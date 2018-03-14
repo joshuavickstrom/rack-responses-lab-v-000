@@ -7,6 +7,7 @@ class Application
 
 
     if current_time.hour < 12
+      binding.pry
       resp.write "Good Morning"
     elsif current_time.hour > 12 && current_time.hour < 24
       resp.write "Good Afternoon"
