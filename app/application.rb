@@ -7,11 +7,12 @@ class Application
 
     case
     when current_time.hour < 12
-      binding.pry
       resp.write "Good Morning"
     when current_time.hour > 12 && current_time.hour < 24
       resp.write "Good Afternoon"
     end
     resp.finish
   end
+  binding.pry
+
 end
